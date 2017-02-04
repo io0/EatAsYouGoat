@@ -2,9 +2,9 @@
 <html> 
     <head> 
         <meta charset="UTF-8">
-        <link type="text/css" rel="stylesheet" herf="basic.css">
-        <script src="main.jc"></script>
-        
+        <link type="text/css" rel="stylesheet" href="basic.css">
+        <link rel="shortcut icon" href="goatIcon.png">
+        <script src="main.js"></script>
         <title> Goat As You Eat </title> 
     </head>
     <body>
@@ -14,28 +14,53 @@
               window.fbAsyncInit = function() {
                 FB.init({
                   appId      : '161413351026984',
-                  cookie     : true,
                   xfbml      : true,
                   version    : 'v2.8'
                 });
-                FB.AppEvents.logPageView();   
+                FB.AppEvents.logPageView();
               };
 
-              (function(d, s, id){
-                 var js, fjs = d.getElementsByTagName(s)[0];
-                 if (d.getElementById(id)) {return;}
-                 js = d.createElement(s); js.id = id;
-                 js.src = "//connect.facebook.net/en_US/sdk.js";
-                 fjs.parentNode.insertBefore(js, fjs);
-               }(document, 'script', 'facebook-jssdk'));
+              (function(d, s, id) {
+                  var js, fjs = d.getElementsByTagName(s)[0];
+                  if (d.getElementById(id)) return;
+                  js = d.createElement(s); js.id = id;
+                  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=161413351026984";
+                  fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
         
             // Check Login status
-            FB.getLoginStatus(function(response) {
-                statusChangeCallback(response);
-            });
+            
+           
         </script>
-        <h1>GOAT AS YOU GO!</h1>
+        <div class="title">
+            <h1 text-align="center">EAT AS YOU GOAT!</h1>
+        </div>
+        <br></br>
+        <br>
         <!--- Facebook Login button --->
-        <div class="fb-login-button" data-max-rows="5" data-size="large" data-show-faces="false" data-auto-logout-link="false"></div>
+        <div class="fb-login-button" data-width="200" data-max-rows="1000" data-size="xlarge" data-show-faces="false" data-auto-logout-link="false" scope="public_profile" onlogin="checkLoginState();"></div>
+    
+    <br></br>
+        <br>
+        <br>
+        <div
+          class="fb-like"
+          data-share="true"
+          data-width="450"
+          data-show-faces="true">
+        </div>
+<br></br>
+        <br>
+        <br><br></br>
+        <br>
+        <?php
+			session_start();
+			if(empty($_SESSION['visited']){
+				$counter = file_get_contents('/indexhits.txt') + 1;
+				file_put_contents('/indexhits.txt', $counter);
+			}
+			$_SESSION['visited'] = TRUE;
+		?>
+        
     </body>
 </html>     

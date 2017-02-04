@@ -1,6 +1,9 @@
+/* Fonts */
+@import url(https://fonts.googleapis.com/css?family=Indie+Flower);
+
 body {
 	background-attachment: fixed;
-	background-color: rgb(0, 53, 98);
+	background-color: rgb(5, 50, 98);
 	background-position: center;
 	background-repeat: no-repeat;
 	-webkit-background-size: cover;
@@ -30,3 +33,29 @@ body {
 ::-webkit-scrollbar-thumb:window-inactive {
 	background: rgba(255,0,0,0.4); 
 }
+
+div.title
+{
+    font: normal 8vmin Indie+Flower;
+    position: relative;
+    font-family: 'Indie Flower', cursive;
+    font-size: 250%;
+    display: block;
+    left: 8%;
+    text-align: center;
+    color: azure;
+}
+div.fb-login-button
+{
+    display: block;
+    position: relative;
+    left: 45%;
+    z-index:1000;
+}
+
+div.fb-like
+{
+    top:;
+    position: relative;
+}
+
