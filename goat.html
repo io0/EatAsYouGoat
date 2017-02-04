@@ -1,0 +1,30 @@
+<!Doctype html>
+<html> 
+    <head> 
+        <meta charset="UTF-8">
+        <link type="text/css" rel="stylesheet" herf="basic.css">
+        <script src="main.jc"></script>
+        
+        <title> Goat As You Eat </title> 
+    </head>
+    <body>
+        <div id="fb-root"></div>
+        <script>            
+            // Import Facebook API
+            (function(d, s, id) {
+                  var js, fjs = d.getElementsByTagName(s)[0];
+                  if (d.getElementById(id)) return;
+                  js = d.createElement(s); js.id = id;
+                  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
+                  fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+            // Check Login status
+            FB.getLoginStatus(function(response) {
+                statusChangeCallback(response);
+            });
+        </script>
+        <h1>GOAT AS YOU GO!</h1>
+        <!--- Facebook Login button --->
+        <div class="fb-login-button" data-max-rows="5" data-size="large" data-show-faces="false" data-auto-logout-link="false"></div>
+    </body>
+</html>     
